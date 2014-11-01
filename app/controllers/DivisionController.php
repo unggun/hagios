@@ -1,17 +1,22 @@
 <?php
 
+use Illuminate\Database\Eloquent\ModelNotFoundException;
+
+
 class DivisionController extends BaseController {
   public function show($slug){
 
     $divisions = Division::where('dvSlug', $slug)->first();
 
     if ($divisions->dvId != 6) {
-      $schedules = Schedule::where('sSvId', $divisions->dvId)
-              ->whereRaw('sTime > NOW()')
-              ->orderBy('sTime')
-              ->first();
+        $schedules = Schedule::where('sSvId', $divisions->dvId)
+                ->whereRaw('sTime > NOW()')
+                ->orderBy('sTime')
+                ->first();
     }
     else {$schedules = [];}
+
+    
 
     $articles = Article::where('aType', '=', $divisions->dvId)->get();
 

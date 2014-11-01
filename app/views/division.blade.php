@@ -37,7 +37,7 @@
 				<h3>Service Venue</h3>
 				<p>{{$divisiondata->dvVenue}}</p>
 			</div>
-			@if ($divisiondata->dvId != 6 || !empty($schedule))
+			@if ($divisiondata->dvId != 6 && !empty($schedule))
 				<div class ="side-info well">
 					<h3>Jadwal ibadah berikutnya</h3>
 					<p>{{date('M d, Y | H:i', strtotime($schedule->sTime))}}</p>
