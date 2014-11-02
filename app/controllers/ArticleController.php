@@ -63,8 +63,13 @@ class ArticleController extends BaseController {
 
 
   public function show(){
-    $articles = Article::all();
+    $articles = Article::orderBy('created_at', 'DESC')->get();
     return View::make('articles')->with('articlesdata', $articles);
+  }
+
+  public function showArticle(Article $article){
+    //$this->layout->title = 'Hagios Family | '.$article->aTitle;
+    return View::make('showarticle')->with('articledata', $article);
   }
 }
 

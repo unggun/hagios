@@ -13,16 +13,13 @@
 	<div class="row blog-section">
 		<div class="container">
 		<section>
-		   @foreach($articlesdata as $article)
 		      <div class="blogShort clear">
-		      	<h2>{{$article->aTitle}}</h2>
-		      	{{ HTML::image($article->aImage1, 'foto/ilustrasi', array('class' => 'pull-left img-responsive thumb margin10 img-thumbnail')) }}
-		      	<em>Oleh: {{$article->aAuthor}}</em><br />
-		      	<em>Posted by at {{date('M d, Y', strtotime($article->created_at)}}</em>
-		      	<p>{{$article->aIntro}}...</p>
-		      	<a class="btn btn-blog pull-right marginBottom10" href="{{URL::route('showarticle',$article->aSlug)}}">READ MORE</a>
+		      	<h2>{{$articledata->aTitle}}</h2>
+		      	{{ HTML::image($articledata->aImage1, 'foto/ilustrasi', array('class' => 'pull-left img-responsive img-large margin10 img-thumbnail')) }}
+		      	<em>Oleh: {{$articledata->aAuthor}}</em><br />
+		      	<em>Posted by {{date('M d, Y', strtotime($articledata->created_at))}}</em>
+		      	<p>{{$articledata->aContent}}</p>
 		      </div>
-		    @endforeach
 
 
 		</section>

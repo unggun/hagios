@@ -13,6 +13,7 @@
     <link rel="stylesheet" type="text/css" href="{{ URL::asset('css/responsive.css') }}" media="screen">
     <link rel="stylesheet" type="text/css" href="{{ URL::asset('css/icons.css') }}" media="screen">
     <link rel="stylesheet" type="text/css" href="{{ URL::asset('css/font-awesome.min.css') }}" media="screen">
+    <link rel="stylesheet" type="text/css" href="{{ URL::asset('css/bootstrap-lightbox.min.css') }}" media="screen">
 
     <link href="{{ URL::asset('css/style.css') }}" rel="stylesheet">
     <link href="{{ URL::asset('css/_style.css') }}" rel="stylesheet">
@@ -48,8 +49,8 @@
 	                <li class="drop">
 	                    <a href="#">News</a>
 	                    <ul class="dropdown">
-	                        <li><a href="{{URL::route('article')}}">Articles</a></li>
-	                        <li><a href="{{URL::route('sermon')}}">Sermon</a></li>
+	                        <li><a href="{{URL::route('articles')}}">Articles</a></li>
+	                        <li><a href="{{URL::route('sermons')}}">Sermon</a></li>
 	                    </ul>
 	                </li>
 	                <li class="drop">
@@ -125,7 +126,7 @@
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src="{{ URL::asset('js/bootstrap.min.js') }}"></script>
     <script type="text/javascript" src="{{ URL::asset('js/jquery.min.js') }}"></script>
-	<script type="text/javascript" src="{{ URL::asset('js/jquery.migrate.j') }}s"></script>
+	<script type="text/javascript" src="{{ URL::asset('js/jquery.migrate.js') }}s"></script>
 	<script type="text/javascript" src="{{ URL::asset('js/bootstrap.min.js') }}"></script>
 	<script type="text/javascript" src="{{ URL::asset('js/retina-1.1.0.min.js') }}"></script>
 	<script type="text/javascript" src="{{ URL::asset('js/jquery.easing-1.3.pack.js') }}"></script>
@@ -136,6 +137,7 @@
 	<script type="text/javascript" src="{{ URL::asset('js/jquery.isotope.min.js') }}"></script>
 	<script type="text/javascript" src="{{ URL::asset('js/imagesloaded.min.js') }}"></script>
 	<script type="text/javascript" src="{{ URL::asset('js/smooth-scroll.js') }}"></script>
+	<script type="text/javascript" src="{{ URL::asset('js/bootstrap-lightbox.min.js') }}"></script>
 	<script type="text/javascript" src="{{ URL::asset('js/main.js') }}"></script>
   </body>
 </html>

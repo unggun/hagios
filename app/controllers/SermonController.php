@@ -48,11 +48,14 @@ class SermonController extends BaseController {
 
 
   public function show(){
-    $sermons = Sermon::all();
+    $sermons = Sermon::orderBy('created_at','DESC')->get();
     return View::make('sermon')->with('sermonsdata', $sermons);
   }
 
-
+  public function showSermon(Sermon $sermon){
+    //$this->layout->title = 'Hagios Family | '.$article->aTitle;
+    return View::make('showsermon')->with('sermondata', $sermon);
+  }
 
 }
 

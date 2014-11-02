@@ -18,7 +18,9 @@ class DivisionController extends BaseController {
 
     
 
-    $articles = Article::where('aType', '=', $divisions->dvId)->get();
+    $articles = Article::where('aType', '=', $divisions->dvId)
+                        ->orderBy('created_at', 'DESC')
+                        ->get();
 
     $extraSection = '';
     if ($divisions->dvId == 4) {

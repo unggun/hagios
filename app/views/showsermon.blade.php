@@ -13,16 +13,13 @@
 	<div class="row blog-section">
 		<div class="container">
 		<section>
-			@foreach($sermonsdata as $sermon)
 		      <div class="blogShort clear">
-		      	<h2>{{$sermon->srTitle}}</h2>
-		      	{{ HTML::image($sermon->srImage, 'foto/ilustrasi', array('class' => 'pull-left img-responsive thumb margin10 img-thumbnail')) }}
-		      	<em>Oleh: {{$sermon->srName}}</em><br />
-		      	<em>Posted by {{date('M d, Y', strtotime($sermon->created_at))}}</em>
-		      	<p>{{$sermon->srIntro}}...</p>
-		      	<a class="btn btn-blog pull-right marginBottom10" href="{{URL::route('showsermon',$sermon->srSlug)}}">READ MORE</a>
+		      	<h2>{{$sermondata->srTitle}}</h2>
+		      	{{ HTML::image($sermondata->srImage, 'foto/ilustrasi', array('class' => 'pull-left img-responsive img-large margin10 img-thumbnail')) }}
+		      	<em>Oleh: {{$sermondata->srName}}</em><br />
+		      	<em>Posted by at {{date('M d, Y', strtotime($sermondata->created_at))}}</em>
+		      	<p>{{$sermondata->srContent}}</p>
 		      </div>
-		    @endforeach
 
 
 		</section>

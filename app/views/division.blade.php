@@ -18,9 +18,9 @@
 		      	<h2>{{$article->aTitle}}</h2>
 		      	{{ HTML::image($article->aImage1, 'foto/ilustrasi', array('class' => 'pull-left img-responsive thumb margin10 img-thumbnail')) }}
 		      	<em>Oleh: {{$article->aAuthor}}</em><br />
-		      	<em>Posted by </em>
+		      	<em>Posted by at {{date('M d, Y', strtotime($article->created_at))}}</em>
 		      	<p>{{$article->aIntro}}...</p>
-		      	<a class="btn btn-blog pull-right marginBottom10" href="http://bootsnipp.com/user/snippets/2RoQ">READ MORE</a>
+		      	<a class="btn btn-blog pull-right marginBottom10" href="{{URL::route('showarticle',$article->aSlug)}}">READ MORE</a>
 		      </div>
 		    @endforeach
 

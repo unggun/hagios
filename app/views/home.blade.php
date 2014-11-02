@@ -61,7 +61,7 @@
 							<p>Oleh :  {{$sermondata->srName}}</p><br>
 							<p>
 								{{$sermondata->srIntro}}...</p>
-								<button type="button" class="btn btn-primary pull-right">Read More</button>
+								<a href="{{URL::route('showsermon',$sermondata->srSlug)}}"><button type="button" class="btn btn-primary pull-right">Read More</button></a>
 						</article>
 				      </div>
 				    <div class="item">
@@ -70,7 +70,7 @@
 							<h2>{{$articledata->aTitle}}</h2>
 							<p>Oleh : {{$articledata->aAuthor}}</p><br>
 							<p>{{$articledata->aIntro}}...</p>
-								<button type="button" class="btn btn-primary pull-right">Read More</button>
+								<a href="{{URL::route('showarticle',$articledata->aSlug)}}"><button type="button" class="btn btn-primary pull-right">Read More</button></a>
 						</article>
 				    </div>
 				  </div>
@@ -93,17 +93,29 @@
 			<p>We invite you to join these events!</p>
 		</div>
 		<div class="container-fluid">
-		<div class="event-content row">
-			<div class="img-content col-md-6">
-				{{ HTML::image('images/gumregah.jpg', 'foto/ilustrasi', array('class' => 'img-responsive thumb margin10 img-thumbnail')) }}
-				<h4>Youth Celebration 2013 "Revolution"</h4>
+			<div class="event-content row">
+				<div class="img-content col-md-6">
+					<a data-toggle="lightbox" href="#lightbox1">{{ HTML::image('images/gumregah.jpg', 'foto/ilustrasi', array('class' => 'img-responsive thumb margin10 img-thumbnail')) }}</a>
+					<h4>Youth Celebration 2013 "Revolution"</h4>
+				</div>
+				<div id="lightbox1" class="lightbox hide fade"  tabindex="-1" role="dialog" aria-hidden="true">
+					<div class='lightbox-content'>
+						{{ HTML::image('images/gumregah.jpg', 'foto/ilustrasi') }}
+					</div>
+				</div>	
+				<div class="img-content col-md-6">
+					{{ HTML::image('images/yc2013.jpg', 'foto/ilustrasi', array('class' => 'img-responsive thumb margin10 img-thumbnail')) }}
+					<h4>Youth Celebration 2013 "Revolution"</h4>
+				</div>
 			</div>
-			<div class="img-content col-md-6">
-				{{ HTML::image('images/yc2013.jpg', 'foto/ilustrasi', array('class' => 'img-responsive thumb margin10 img-thumbnail')) }}
-				<h4>Youth Celebration 2013 "Revolution"</h4>
-			</div>
-		</div>
 		</div>	
 	</div>
+
+<script type="text/javascript">
+	$(document).ready(function()
+	{
+		$('#lightbox1').lightbox();
+	});
+</script>
 
 @stop

@@ -11,18 +11,37 @@
 |
 */
 
+/*model bindings*/
+Route::bind('article', function($value, $route)
+{
+    return Article::where('aSlug', $value)->firstOrFail();
+});
+Route::bind('sermon', function($value, $route)
+{
+    return Sermon::where('srSlug', $value)->firstOrFail();
+});
+Route::model('schedule','Schedule');
+
+
+
 Route::get('/', array('as' => 'home', 'uses' => 'HomeController@show'));
 
 Route::get('/servicetime', array('as' => 'servicetime', 'uses' => 'ScheduleController@showEachDiv'));
+
+//========== ARTICLE =================//
 
 Route::get('/newarticle', function()
 {
     return View::make('newarticle');
 });	
 
-Route::get('/articles', array('as' => 'article', 'uses' => 'ArticleController@show'));
+Route::get('/articles', array('as' => 'articles', 'uses' => 'ArticleController@show'));
+
+Route::get('/articles/{article}',['as' => 'showarticle','uses' => 'ArticleController@showArticle']);
 
 Route::post('/article/insert', 'ArticleController@store');
+
+//============= SERMON ================//
 
 Route::get('/newsermon', function()
 {
@@ -31,7 +50,9 @@ Route::get('/newsermon', function()
 
 Route::post('/sermon/insert', 'SermonController@store');
 
-Route::get('/sermon', array('as' => 'sermon', 'uses' => 'SermonController@show'));
+Route::get('/sermons', array('as' => 'sermons', 'uses' => 'SermonController@show'));
+
+Route::get('/sermons/{sermon}',['as' => 'showsermon','uses' => 'SermonController@showSermon']);
 
 
 Route::get('/newschedule', function()

@@ -321,6 +321,10 @@ footer img {
 
 .blogShort{ border-bottom:1px solid #ddd;}
 
+.blogShort h2 {
+	margin-bottom: 10px;
+}
+
 .blog-section {
 	padding-top: 20px;
 	padding-bottom: 20px;
@@ -362,6 +366,10 @@ footer img {
 
 .thumb {
 	max-width: 200px;
+}
+
+.img-large {
+	max-width: 350px;
 }
 
 
