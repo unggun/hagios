@@ -23,7 +23,7 @@
 		      	<a class="btn btn-blog pull-right marginBottom10" href="{{URL::route('showarticle',$article->aSlug)}}">READ MORE</a>
 		      </div>
 		    @endforeach
-
+		    {{ $articlesdata->links() }}
 
 		</section>
 		<aside class="col-md-3">

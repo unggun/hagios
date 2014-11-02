@@ -48,7 +48,7 @@ class SermonController extends BaseController {
 
 
   public function show(){
-    $sermons = Sermon::orderBy('created_at','DESC')->get();
+    $sermons = Sermon::orderBy('created_at','DESC')->paginate(10);
     return View::make('sermon')->with('sermonsdata', $sermons);
   }
 

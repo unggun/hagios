@@ -26,6 +26,7 @@
 
 
 		</section>
+		{{ $articlesdata->links() }}
 		</div>
 	</div> <!-- End of blog-section -->
 </div> <!-- End of Container-fluid -->

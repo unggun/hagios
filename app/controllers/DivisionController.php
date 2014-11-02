@@ -20,7 +20,7 @@ class DivisionController extends BaseController {
 
     $articles = Article::where('aType', '=', $divisions->dvId)
                         ->orderBy('created_at', 'DESC')
-                        ->get();
+                        ->paginate(10);
 
     $extraSection = '';
     if ($divisions->dvId == 4) {

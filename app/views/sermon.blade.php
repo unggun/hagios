@@ -24,7 +24,7 @@
 		      </div>
 		    @endforeach
 
-
+		    {{ $sermonsdata->links() }}
 		</section>
 		</div>
 	</div> <!-- End of blog-section -->

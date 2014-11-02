@@ -63,7 +63,7 @@ class ArticleController extends BaseController {
 
 
   public function show(){
-    $articles = Article::orderBy('created_at', 'DESC')->get();
+    $articles = Article::orderBy('created_at', 'DESC')->paginate(10);
     return View::make('articles')->with('articlesdata', $articles);
   }
 
