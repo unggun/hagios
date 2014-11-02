@@ -41,7 +41,7 @@
 				  </div>
 				</div>
 			<br />
-			<a href="#">New to Christianity?</a>
+			<a href="#"><h4>Want to know more about Jesus?</h4></a>
 		</div>
 		<div id="content" class="col-xs-12 col-md-9">
 			<div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
