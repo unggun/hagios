@@ -55,6 +55,17 @@ Route::get('/sermons', array('as' => 'sermons', 'uses' => 'SermonController@show
 Route::get('/sermons/{sermon}',['as' => 'showsermon','uses' => 'SermonController@showSermon']);
 
 
+//============== EVENT ===================//
+Route::get('/newevent', function()
+{
+    return View::make('newevent');
+});	
+
+Route::post('/event/insert', 'UpcomingController@store');
+
+
+//=============== SCHEDULE ===============//
+
 Route::get('/newschedule', function()
 {
     return View::make('newschedule');

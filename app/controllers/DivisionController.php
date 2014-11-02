@@ -33,13 +33,17 @@ class DivisionController extends BaseController {
                       </div>';    
     }
     
-
+    $eventdata = Upcoming::where('uType', $divisions->dvId)
+                ->whereRaw('uExpire_at > NOW()')
+                ->orderBy('uExpire_at')
+                ->first();
 
    	return View::make('division')
                 ->with('schedule', $schedules)
                 ->with('articlesdata', $articles)
                 ->with('divisiondata', $divisions)
-                ->with('extraSection', $extraSection);
+                ->with('extraSection', $extraSection)
+                ->with('eventdata', $eventdata);
   }
 }
 

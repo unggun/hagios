@@ -46,6 +46,13 @@
 					<p>{{$schedule->sSpeaker}}</p>
 				</div>
 			@endif
+			@if (!empty($eventdata))
+				<div class ="side-info well">
+					<h3>Event/Acara berikutnya</h3>
+					<p>{{ HTML::image($eventdata->uImage, 'foto/ilustrasi', array('class' => 'img-responsive thumb margin10 img-thumbnail')) }}</p>
+					<p>{{$eventdata->uName}}</p>
+				</div>
+			@endif
 			{{ $extraSection }}
 		</aside>
 		</div>

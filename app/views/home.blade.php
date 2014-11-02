@@ -86,36 +86,25 @@
 	</div>
 </div>
 
-
+@if (!empty($eventsdata))
 <div id="event-container" class="clear">
 		<div id="container-title">
-			<h2>Upcoming Events</h2>
+			<h2>Upcoming Event(s)</h2>
 			<p>We invite you to join these events!</p>
 		</div>
 		<div class="container-fluid">
 			<div class="event-content row">
-				<div class="img-content col-md-6">
-					<a data-toggle="lightbox" href="#lightbox1">{{ HTML::image('images/gumregah.jpg', 'foto/ilustrasi', array('class' => 'img-responsive thumb margin10 img-thumbnail')) }}</a>
-					<h4>Youth Celebration 2013 "Revolution"</h4>
+				<?php $colWidth = 12/count($eventsdata); ?>
+
+				@foreach ($eventsdata as $eventdata)
+				<div class="img-content col-xs-12 {{'col-md-'.$colWidth}}">
+					<a data-toggle="lightbox" href="#lightbox1">{{ HTML::image($eventdata->uImage, 'foto/ilustrasi', array('class' => 'img-responsive thumb margin10 img-thumbnail')) }}</a>
+					<h4>{{$eventdata->uName}}</h4>
 				</div>
-				<div id="lightbox1" class="lightbox hide fade"  tabindex="-1" role="dialog" aria-hidden="true">
-					<div class='lightbox-content'>
-						{{ HTML::image('images/gumregah.jpg', 'foto/ilustrasi') }}
-					</div>
-				</div>	
-				<div class="img-content col-md-6">
-					{{ HTML::image('images/yc2013.jpg', 'foto/ilustrasi', array('class' => 'img-responsive thumb margin10 img-thumbnail')) }}
-					<h4>Youth Celebration 2013 "Revolution"</h4>
-				</div>
+				@endforeach
 			</div>
 		</div>	
 	</div>
-
-<script type="text/javascript">
-	$(document).ready(function()
-	{
-		$('#lightbox1').lightbox();
-	});
-</script>
+@endif
 
 @stop

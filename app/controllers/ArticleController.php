@@ -29,26 +29,26 @@ class ArticleController extends BaseController {
           $article->aIntro       	= (strlen($post['content']) > 500) ? substr($post['content'], 0, 500) : $post['content'];
 
           if (Input::hasFile('image1'))
-			{
-				$file     = Input::file('image1');
-				$filename = str_random(25).'-'.$file->getClientOriginalName();
+    			{
+    				$file     = Input::file('image1');
+    				$filename = str_random(25).'-'.$file->getClientOriginalName();
 
-				$destinationPath = 'uploads/images/';
-			    $file->move($destinationPath, $filename);
-				$article->aImage1	= $destinationPath.$filename;
+    				$destinationPath = 'uploads/images/articles/';
+    			    $file->move($destinationPath, $filename);
+    				$article->aImage1	= $destinationPath.$filename;
 
-			}
+    			}
 
-			if (Input::hasFile('image2'))
-			{
-				$file     = Input::file('image2');
-				$filename = str_random(25).'-'.$file->getClientOriginalName();
+    			if (Input::hasFile('image2'))
+    			{
+    				$file     = Input::file('image2');
+    				$filename = str_random(25).'-'.$file->getClientOriginalName();
 
-				$destinationPath = 'uploads/images/';
-			    $file->move($destinationPath, $filename);
-				$article->aImage2	= $destinationPath.$filename;
+    				$destinationPath = 'uploads/images/articles/';
+    			    $file->move($destinationPath, $filename);
+    				$article->aImage2	= $destinationPath.$filename;
 
-			}
+    			}
 
 		    $article->save();
 

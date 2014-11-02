@@ -33,9 +33,15 @@ class HomeController extends BaseController {
    		$sermon = Sermon::orderBy('created_at', 'DESC')
    						->first();
 
+   		$upcomings = Upcoming::whereRaw('uExpire_at >= NOW()')
+   						->orderBy('uExpire_at')
+   						->limit(3)
+   						->get();
+
    		return View::make('home')->with('schedulesdata', $schedules)
    								->with('articledata', $articles)
-   								->with('sermondata',$sermon);
+   								->with('sermondata',$sermon)
+   								->with('eventsdata',$upcomings);
 	}
 
 }
