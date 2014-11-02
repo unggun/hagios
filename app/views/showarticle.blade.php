@@ -17,7 +17,7 @@
 		      	<h2>{{$articledata->aTitle}}</h2>
 		      	{{ HTML::image($articledata->aImage1, 'foto/ilustrasi', array('class' => 'pull-left img-responsive img-large margin10 img-thumbnail')) }}
 		      	<em>Oleh: {{$articledata->aAuthor}}</em><br />
-		      	<em>Posted by {{date('M d, Y', strtotime($articledata->created_at))}}</em>
+		      	<em>Posted by at {{date('M d, Y', strtotime($articledata->created_at))}}</em>
 		      	<p>{{$articledata->aContent}}</p>
 		      </div>
 

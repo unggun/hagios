@@ -27,9 +27,9 @@ class DivisionController extends BaseController {
       $extraSection = '
                     <div id="social-icon" class="text-center">
                         <a href="https://www.facebook.com/groups/228268297212674/"><i id="social" class="fa fa-facebook fa-3x social-fb"></i></a>
-                              <a href="https://twitter.com/hagiosyouth"><i id="social" class="fa fa-twitter fa-3x social-tw"></i></a>
+                              <a href="#"><i id="social" class="fa fa-twitter fa-3x social-tw"></i></a>
                               <a href="https://www.youtube.com/channel/UC1oNCkXtYcihwOX2ihAT55g"><i id="social" class="fa fa-youtube-play fa-3x social-gp"></i></a>
-                              <a href="mailto:hagiosyouth@gmail.com"><i id="social" class="fa fa-envelope fa-3x social-em"></i></a>
+                              <a href="#"><i id="social" class="fa fa-instagram fa-3x social-is"></i></a>
                       </div>';    
     }
     

@@ -512,7 +512,7 @@ footer img {
 .tri-container {
 	position: absolute;
 	z-index: 10;
-	top: 25%;
+	top: 35%;
 	left: 10%;
 }
 
@@ -526,7 +526,7 @@ footer img {
   -webkit-transition: -webkit-transform 300ms ease-out;
   -moz-transition: -moz-transform 300ms ease-out;
   transition: transform 300ms ease-out;
-  width: 100px;
+  width: 70px;
 }
 .wrap:hover {
   -webkit-transition: -webkit-transform 700ms ease-out;
@@ -539,12 +539,12 @@ footer img {
   transform: rotate(45deg) translate3d(10px, 10px, 0);
 }
 .wrap:nth-child(even) {
-  width: 40px;
-  -webkit-transform: rotate(225deg) translate3d(30px, 120px, 0);
-  -moz-transform: rotate(225deg) translate3d(30px, 120px, 0);
-  -ms-transform: rotate(225deg) translate3d(30px, 120px, 0);
-  -o-transform: rotate(225deg) translate3d(30px, 120px, 0);
-  transform: rotate(225deg) translate3d(30px, 120px, 0);
+  width: 20px;
+  -webkit-transform: rotate(225deg) translate3d(18px, 73px, 0);
+  -moz-transform: rotate(225deg) translate3d(18px, 73px, 0);
+  -ms-transform: rotate(225deg) translate3d(18px, 73px, 0);
+  -o-transform: rotate(225deg) translate3d(18px, 73px, 0);
+  transform: rotate(225deg) translate3d(18px, 73px, 0);
 }
 .wrap:nth-child(even) .crop img {
   -webkit-transform: skew(-20deg, -20deg) rotate(-225deg);
@@ -554,17 +554,17 @@ footer img {
   transform: skew(-20deg, -20deg) rotate(-225deg);
 }
 .wrap:nth-child(even):hover {
-  -webkit-transform: rotate(225deg) translate3d(40px, 130px, 0);
-  -moz-transform: rotate(225deg) translate3d(40px, 130px, 0);
-  -ms-transform: rotate(225deg) translate3d(40px, 130px, 0);
-  -o-transform: rotate(225deg) translate3d(40px, 130px, 0);
-  transform: rotate(225deg) translate3d(40px, 130px, 0);
+  -webkit-transform: rotate(225deg) translate3d(28px, 83px, 0);
+  -moz-transform: rotate(225deg) translate3d(28px, 83px, 0);
+  -ms-transform: rotate(225deg) translate3d(28px, 83px, 0);
+  -o-transform: rotate(225deg) translate3d(28px, 83px, 0);
+  transform: rotate(225deg) translate3d(28px, 83px, 0);
 }
 
 .crop {
   position: relative;
-  width: 160px;
-  height: 160px;
+  width: 100px;
+  height: 100px;
   margin: 0;
   display: block;
   overflow: hidden;
@@ -575,12 +575,12 @@ footer img {
   transform: skew(20deg, 20deg) translate3d(0, 0, 0);
 }
 .crop img {
-  width: 160px;
-  height: 160px;
+  width: 100px;
+  height: 100px;
   position: absolute;
   left: -50%;
-  margin-top: 36px;
-  margin-left: 36px;
+  margin-top: 23px;
+  margin-left: 23px;
   top: -50%;
   -webkit-transform: skew(-20deg, -20deg) rotate(-45deg);
   -moz-transform: skew(-20deg, -20deg) rotate(-45deg);
@@ -592,7 +592,6 @@ footer img {
   -moz-transition: opacity 300ms ease-in-out;
   transition: opacity 300ms ease-in-out;
 }
-
 .crop img:hover {
   opacity: 1;
 }
