@@ -86,7 +86,7 @@
 	</div>
 </div>
 
-@if (!empty($eventsdata))
+@if (!empty(array_filter((array) $eventsdata)))
 <div id="event-container" class="clear">
 		<div id="container-title">
 			<h2>Upcoming Event(s)</h2>

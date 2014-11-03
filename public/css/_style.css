@@ -132,7 +132,7 @@ footer img {
 /*------------------------------------------*/
 
 #middle-row {
-	height: 300px;
+	min-height: 300px;
 }
 .carousel .slide {
 	height: inherit;
@@ -148,6 +148,8 @@ footer img {
 	background-color: #edeeed;
 	padding: 30px;
 	text-align: center;
+	height: inherit;
+	vertical-align: middle;
 }
 
 #sunday-service h3 {
@@ -323,6 +325,10 @@ footer img {
 
 .blogShort h2 {
 	margin-bottom: 10px;
+}
+
+.blogShort p {
+	padding-top: 10px;
 }
 
 .blog-section {
@@ -597,3 +603,77 @@ footer img {
 }
 
 /*============== END OF VISION AND MISSION PAGE ====================*/
+
+
+/*============== ADMIN PAGE ====================*/
+
+.admin-content {
+	padding-top: 20px;
+	padding-bottom: 20px;
+	width: inherit;
+}
+
+.admin-content h2 {
+	font-family: 'Open Sans', sans-serif;
+	font-weight: bold;
+	padding-bottom: 20px;
+}
+
+.sidebar {
+	height: 100%;
+	position: fixed;
+	padding: 20px;
+	text-align: center;
+	background-color: #336E7B;
+	
+}
+
+.sidebar p {
+	color: #DADFE1;
+	text-align: center;
+	padding-bottom: 10px;
+}
+
+#side-menu {
+	text-align: left;
+}
+
+#side-menu a {
+	color: #DADFE1;
+}
+
+#sidebar-footer {
+	bottom: 5%;
+	left: 15%;
+	position: absolute;
+	color: #DADFE1;
+	text-align: center;
+}
+
+#sidebar-footer h4 {
+	color: #DADFE1;
+	padding-top: 5px;
+}
+
+.post-list {
+	padding: 20px;
+	max-width: inherit;
+}
+
+#dashboard {
+	padding: 30px;
+	padding-top: 50px;
+	margin: 20px auto;
+	text-align: center;
+	vertical-align: middle;
+}
+
+#dashboard img {
+	width: 200px;
+	height: auto;
+	padding-bottom: 20px;
+}
+
+#dashboard h2, #dashboard p {
+	padding-bottom: 10px;
+}

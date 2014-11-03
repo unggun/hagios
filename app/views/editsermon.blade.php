@@ -7,24 +7,23 @@
         <div class="alert alert-danger" role="alert">
             Pastikan kolom isian dengan tanda '*' telah diisi!
         </div>
+    @elseif(Session::has('success'))
+        <div class="alert alert-success" role="alert">
+            {{Session::get('success')}}
+        </div>
     @endif
 
-	<h2>Tulis artikel baru</h2>
+	<h2>Tulis khotbah baru</h2>
 
-	{{ Form::open(array('action' => 'ArticleController@store', 'enctype' => 'multipart/form-data')) }}
-	{{Form::label('division', 'Divisi') }}*
-
-	 {{Form::select('division', array('0' => 'Umum','1' => 'Lansia', '2' => 'Pria', '3' => 'Wanita', '4' => 'Pemuda', '5' => 'Remaja', '6' => 'Sekolah Minggu', '7' => 'Pasutri'), null , array('class' => 'form-control'))}}
-
-
+	{{ Form::open(array('route' => ['sermon-update', $sermon->srSlug], 'enctype' => 'multipart/form-data')) }}
 
 	 {{Form::label('title', 'Judul') }}*
 
-	 {{Form::text('title', '', array('class' => 'form-control'))}}
+	 {{Form::text('title', $sermon->srTitle, array('class' => 'form-control'))}}
 
 	 {{Form::label('author', 'Penulis') }}*
 
-	 {{Form::text('author', '', array('class' => 'form-control'))}}
+	 {{Form::text('author', $sermon->srName, array('class' => 'form-control'))}}
 
 	 {{Form::label('content', 'Isi Artikel') }}*
 
@@ -35,21 +34,18 @@
 	 	<a data-wysihtml5-command="insertUnorderedList"><button type="button" class="btn btn-default"><i class="fa fa-list-ul"></i></button></a>
 	 	<a data-wysihtml5-command="insertOrderedList"><button type="button" class="btn btn-default"><i class="fa fa-list-ol"></i></button></a>
 	 </div>
-	 {{Form::textarea('content', '', array('class' => 'form-control', 'id' => 'wysihtml5-textarea', 'autofocus'))}}
+	 {{Form::textarea('content', $sermon->srContent, array('class' => 'form-control', 'id' => 'wysihtml5-textarea', 'autofocus'))}}
 
 	 {{Form::label('image1', 'Upload Gambar/foto/ilustrasi 1') }}
 
 	 {{ Form::file('image1') }}
 
-	 {{Form::label('image2', 'Upload Gambar/foto/ilustrasi 2') }}
-
-	 {{ Form::file('image2') }}
-
-	 {{'<br />* = wajib diisi<br /><br />'}}
+	{{'<br />* = wajib diisi<br /><br />'}}
 
 	 {{Form::submit('Submit', array('class' => 'btn btn-primary')) }}
 	{{ Form::close() }}
-	</div>
+		</div>
+
 
 	<script>
 		var editor = new wysihtml5.Editor("wysihtml5-textarea", { // id of textarea element

@@ -48,9 +48,36 @@
     <script type="text/javascript" src="{{ URL::asset('js/main.js') }}"></script>
   </head>
   <body>
-
-
-  @yield('content')
+  <div class="row">
+    <div class="col-md-2">
+        <aside class="sidebar">
+            <p>Nama admin</p>
+            <button type="button" class="btn-sys btn-light btn-border btn-extra-small btn-crv">Log Out</button>
+            <a href="{{URL::route('home')}}"><button type="button" class="btn-sys btn-light btn-border btn-extra-small btn-crv">Home Page</button></a>
+            <hr />
+            <div id="side-menu">
+                <a href="{{URL::route('newarticle')}}">Tulis Artikel Baru</a><br />
+                <a href="{{URL::route('articleslist')}}">Daftar Artikel</a><br />
+                <a href="{{URL::route('newsermon')}}">Tulis Khotbah Baru</a><br />
+                <a href="{{URL::route('sermonslist')}}">Daftar Khotbah</a><br />
+                <a href="{{URL::route('newschedule')}}">Buat Jadwal Ibadah Baru</a><br />
+                <a href="{{URL::route('scheduleslist')}}">Daftar Jadwal Ibadah</a><br />
+                <a href="{{URL::route('newevent')}}">Buat Iklan Kegiatan baru</a><br />
+                <a href="{{URL::route('eventslist')}}">Lihat Daftar Iklan Kegiatan</a><br />
+            </div>
+            <div id="sidebar-footer">
+                {{ HTML::image('images/sidebar-footer.png', 'logo') }}
+                <br />
+                <h4>GPdI Hagios Family</h4>
+                <em>Powered by Hagios IT</em>
+            </div>
+        </aside>
+    </div>
+    <div class="col-md-10">
+        @yield('content')
+    </div>
+      
+  </div>
 
   </body>
 </html>

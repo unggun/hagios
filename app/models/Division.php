@@ -12,5 +12,9 @@ class Division extends Eloquent implements SluggableInterface {
         'build_from' => 'dvName',
         'save_to'    => 'slug',
     );
+
+    public function articles(){
+    	return $this->hasMany('Article');
+    }
 }  
 ?>

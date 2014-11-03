@@ -1,7 +1,13 @@
 @extends('admin-layout')
 
 @section('content')
-	<div class='container'>
+	<div class='container admin-content'>
+
+	@if(Session::has('errors'))
+        <div class="alert alert-danger" role="alert">
+            Pastikan kolom isian dengan tanda '*' telah diisi!
+        </div>
+    @endif
 
 	<h2>Tulis khotbah baru</h2>
 

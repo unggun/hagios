@@ -1,15 +1,39 @@
-@extends('layout')
+@extends('admin-layout')
 
 @section('content')
- <section class="container">
+<div class="container post-list">
+	@if(Session::has('success'))
+        <div class="alert alert-success" role="alert">
+            {{Session::get('success')}}
+        </div>
+    @endif
+	<h2>Daftar Artikel</h2>
+	<table class="table table-stripped table-hover">
+		<tr>
+			<th>#</th>
+			<th>Judul</th>
+			<th>Divisi</th>
+			<th>User</th>
+			<th>Update Terakhir</th>
+			<th>Edit/Delete</th>
+		</tr>
 
-    @foreach($articlesdata as $article)
-      <div>
-      	<h2>{{$article->aTitle}}</h2>
-      	<h5>Penulis: {{$article->aAuthor}}</h5>
-      	<p>{{$article->aContent}}</p>
-      	<img src="{{$article->aImage1}}">
-      </div>
-    @endforeach
-    </section>
+		<?php $count = 0; ?>
+		@foreach($articlesdata as $article)
+		<?php $count++; ?>
+		  <tr>
+		  	<td>{{$count}}</td>
+		  	<td>{{$article->aTitle}}</td>
+		  	<td>{{$divisionName[$article->aType]}}</td>
+		  	<td></td>
+		  	<td>{{$article->updated_at}}</td>
+		  	<td>
+		  		<a href="{{URL::route('article-edit',$article->aSlug)}}"><button type="button" class="btn btn-default">Edit</button></a>
+		  		<a href="{{URL::route('article-delete',$article->aSlug)}}"  onclick="if(!confirm('Are you sure to delete this item?')){return false;};"><button type="button" class="btn btn-danger">Delete</button></a>
+		  	</td>
+		  </tr>
+		@endforeach
+    </table>
+    {{$articlesdata->links()}}
+</div>
 @stop

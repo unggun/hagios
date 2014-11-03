@@ -9,5 +9,9 @@ class Article extends Eloquent implements SluggableInterface{
         'build_from' => 'aTitle',
         'save_to'    => 'aSlug',
     );
+
+    public function division() {
+    	return $this->belongsTo('Division');
+    }
 }  
 ?>
