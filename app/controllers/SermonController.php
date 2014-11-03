@@ -32,7 +32,7 @@ class SermonController extends BaseController {
         		$file     = Input::file('image1');
         		$filename = str_random(25).'-'.$file->getClientOriginalName();
 
-        		$destinationPath = 'uploads/images/';
+        		$destinationPath = 'uploads/images/sermon/';
         	    $file->move($destinationPath, $filename);
         		$sermon->srImage	= $destinationPath.$filename;
 
@@ -48,7 +48,7 @@ class SermonController extends BaseController {
 
 
   public function show(){
-    $sermons = Sermon::orderBy('created_at','DESC')->paginate(10);
+    $sermons = Sermon::orderBy('created_at','DESC')->paginate();
     return View::make('sermon')->with('sermonsdata', $sermons);
   }
 

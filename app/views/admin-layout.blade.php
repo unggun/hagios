@@ -43,6 +43,8 @@
     <script type="text/javascript" src="{{ URL::asset('js/jquery.isotope.min.js') }}"></script>
     <script type="text/javascript" src="{{ URL::asset('js/imagesloaded.min.js') }}"></script>
     <script type="text/javascript" src="{{ URL::asset('js/smooth-scroll.js') }}"></script>
+    {{ HTML::script('js/wysihtml5/parser_rules/advanced.js'); }}
+    {{ HTML::script('js/wysihtml5/dist/wysihtml5-0.3.0.min.js'); }}
     <script type="text/javascript" src="{{ URL::asset('js/main.js') }}"></script>
   </head>
   <body>

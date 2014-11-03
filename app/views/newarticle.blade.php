@@ -3,7 +3,7 @@
 @section('content')
 	<div class='container'>
 
-	<h3>Tulis artikel baru</h3>
+	<h2>Tulis artikel baru</h2>
 
 	{{ Form::open(array('action' => 'ArticleController@store', 'enctype' => 'multipart/form-data')) }}
 	{{Form::label('division', 'Divisi') }}
@@ -22,13 +22,33 @@
 
 	 {{Form::label('content', 'Isi Artikel') }}
 
-	 {{Form::textarea('content', '', array('class' => 'form-control'))}}
+	 <div id="wysihtml5-toolbar">
+	 	<a data-wysihtml5-command="bold"><button type="button" class="btn btn-default"><i class="fa fa-bold"></i></button></a>
+	 	<a data-wysihtml5-command="italic"><button type="button" class="btn btn-default"><i class="fa fa-italic"></i></button></a>
+	 	<a data-wysihtml5-command="underline"><button type="button" class="btn btn-default"><i class="fa fa-underline"></i></button></a>
+	 	<a data-wysihtml5-command="insertUnorderedList"><button type="button" class="btn btn-default"><i class="fa fa-list-ul"></i></button></a>
+	 	<a data-wysihtml5-command="insertOrderedList"><button type="button" class="btn btn-default"><i class="fa fa-list-ol"></i></button></a>
+	 </div>
+	 {{Form::textarea('content', '', array('class' => 'form-control', 'id' => 'wysihtml5-textarea', 'autofocus'))}}
 
 	 {{Form::label('image1', 'Upload Gambar/foto/ilustrasi 1') }}
 
 	 {{ Form::file('image1') }}
 
+	 {{Form::label('image2', 'Upload Gambar/foto/ilustrasi 2') }}
+
+	 {{ Form::file('image2') }}
+
+	 {{'<br />* = wajib diisi<br /><br />'}}
+	 
 	 {{Form::submit('Submit', array('class' => 'btn btn-primary')) }}
 	{{ Form::close() }}
 	</div>
+
+	<script>
+		var editor = new wysihtml5.Editor("wysihtml5-textarea", { // id of textarea element
+		  toolbar:      "wysihtml5-toolbar", // id of toolbar element
+		  parserRules:  wysihtml5ParserRules // defined in parser rules set 
+		});
+	</script>
 @stop
