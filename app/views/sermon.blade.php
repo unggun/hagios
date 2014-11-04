@@ -16,9 +16,11 @@
 			@foreach($sermonsdata as $sermon)
 		      <div class="blogShort clear">
 		      	<h2>{{$sermon->srTitle}}</h2>
+		      	@if (!empty($sermon->srImage))
 		      	{{ HTML::image($sermon->srImage, 'foto/ilustrasi', array('class' => 'pull-left img-responsive thumb margin10 img-thumbnail')) }}
+		      	@endif
 		      	<em>Oleh: {{$sermon->srName}}</em><br />
-		      	<em>Posted by at {{date('M d, Y', strtotime($sermon->created_at))}}</em>
+		      	<em>Posted by {{$sermon->srPosted_by}} at {{date('M d, Y', strtotime($sermon->created_at))}}</em>
 		      	<p>{{$sermon->srIntro}}...</p>
 		      	<a class="btn btn-blog pull-right marginBottom10" href="{{URL::route('showsermon',$sermon->srSlug)}}">READ MORE</a>
 		      </div>

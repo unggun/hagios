@@ -45,6 +45,8 @@
 
 	 {{ Form::file('image2') }}
 
+	 {{ Form::hidden('user', Auth::user()->name)}}
+
 	 {{'<br />* = wajib diisi<br /><br />'}}
 
 	 {{Form::submit('Submit', array('class' => 'btn btn-primary')) }}

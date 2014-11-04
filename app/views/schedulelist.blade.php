@@ -9,8 +9,9 @@
 			<th>Divisi</th>
 			<th>Tanggal & Waktu</th>
 			<th>Pembicara</th>
-			<th>User</th>
+			<th>Posted by</th>
 			<th>Update Terakhir</th>
+			<th>Updated by</th>
 			<th>Edit/Delete</th>
 		</tr>
 
@@ -22,8 +23,9 @@
 		  	<td>{{$divisionName[$schedule->sSvId]}}</td>
 		  	<td>{{$schedule->sTime}}</td>
 		  	<td>{{$schedule->sSpeaker}}</td>
-		  	<td></td>
+		  	<td>{{$schedule->sPostedBy}}</td>
 		  	<td>{{$schedule->updated_at}}</td>
+		  	<td>{{$schedule->sUpdated_by}}</td>
 		  	<td>
 		  		<a href="{{URL::route('schedule-edit',$schedule->id)}}"><button type="button" class="btn btn-default">Edit</button></a>
 		  		<a href="{{URL::route('schedule-delete',$schedule->id)}}"  onclick="if(!confirm('Are you sure to delete this item?')){return false;};"><button type="button" class="btn btn-danger">Delete</button></a>

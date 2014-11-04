@@ -15,9 +15,11 @@
 		<section>
 		      <div class="blogShort clear">
 		      	<h2>{{$sermondata->srTitle}}</h2>
+		      	@if (!empty($sermondata->srImage))
 		      	{{ HTML::image($sermondata->srImage, 'foto/ilustrasi', array('class' => 'pull-left img-responsive img-large margin10 img-thumbnail')) }}
+		      	@endif
 		      	<em>Oleh: {{$sermondata->srName}}</em><br />
-		      	<em>Posted by at {{date('M d, Y', strtotime($sermondata->created_at))}}</em>
+		      	<em>Posted by {{$sermondata->srPosted_by}} at {{date('M d, Y', strtotime($sermondata->created_at))}}</em>
 		      	<p>{{$sermondata->srContent}}</p>
 		      </div>
 

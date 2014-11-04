@@ -14,9 +14,10 @@
 			<th>Nama</th>
 			<th>Divisi</th>
 			<th>Poster</th>
-			<th>User</th>
+			<th>Posted by</th>
 			<th>Berakhir Tanggal</th>
 			<th>Update Terakhir</th>
+			<th>Updated by</th>
 			<th>Edit/Delete</th>
 		</tr>
 
@@ -28,9 +29,10 @@
 		  	<td>{{$upcoming->uName}}</td>
 		  	<td>{{$divisionName[$upcoming->uType]}}</td>
 		  	<td>{{ HTML::image($upcoming->uImage, 'foto/ilustrasi', array('style' => 'max-width: 100px')) }}</td>
-		  	<td></td>
+		  	<td>{{$upcoming->uPosted_by}}</td>
 		  	<td>{{date("Y-m-d H:i:s", strtotime($upcoming->uExpire_at))}}</td>
 		  	<td>{{$upcoming->updated_at}}</td>
+		  	<td>{{$upcoming->uUpdated_by}}</td>
 		  	<td>
 		  		<a href="{{URL::route('event-edit',$upcoming->uSlug)}}"><button type="button" class="btn btn-default">Edit</button></a>
 		  		<a href="{{URL::route('event-delete',$upcoming->uSlug)}}"  onclick="if(!confirm('Are you sure to delete this item?')){return false;};"><button type="button" class="btn btn-danger">Delete</button></a>

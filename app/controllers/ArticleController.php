@@ -27,6 +27,7 @@ class ArticleController extends BaseController {
           $article->aAuthor      		= $post['author'];
           $article->aContent 		= $post['content'];
           $article->aIntro       	= (strlen($post['content']) > 500) ? substr($post['content'], 0, 500) : $post['content'];
+          $article->aUserName     = Input::get('user');
 
           if (Input::hasFile('image1'))
     			{
@@ -110,6 +111,7 @@ class ArticleController extends BaseController {
               $article->aAuthor         = $post['author'];
               $article->aContent    = $post['content'];
               $article->aIntro        = (strlen($post['content']) > 500) ? substr($post['content'], 0, 500) : $post['content'];
+              $article->aUpdated_by     = Input::get('user');
 
               if (Input::hasFile('image1'))
               {

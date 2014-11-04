@@ -198,7 +198,10 @@ footer img {
 
 /*-------------------------------------------*/
 #event-container {
-	background-color: #e74c3c;
+	/*background-color: #e74c3c;*/
+	background-image: url('../images/pnw.jpg');
+	background-position: center center;
+	background-attachment: fixed;
 }
 
 #container-title {
@@ -235,6 +238,10 @@ footer img {
 }
 .event-content img {
 	max-height: 200px;
+}
+
+.modal-body img {
+	max-height: 100%;
 }
 
 .img-content {
@@ -393,6 +400,8 @@ footer img {
 	bottom: 20%;
 	position: absolute;
 	width: 400px;
+	background: rgba(108, 122, 137,0.3);
+	padding: 10px;
 }
 
 .team-content h1 {

@@ -26,7 +26,7 @@
 			<br /><br />
 			<button class="btn-sys btn-dark btn-border btn-large btn-crv" data-toggle="modal" data-target="#mapModal">Get Direction</button>
 			<!-- Modal -->
-				<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+				<div class="modal fade" id="mapModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
 				  <div class="modal-dialog">
 				    <div class="modal-content">
 				      <div class="modal-header">
@@ -55,7 +55,9 @@
 				  <!-- Wrapper for slides -->
 				  <div class="carousel-inner container">
 				    <div class="item active">
-					  {{ HTML::image($sermondata->srImage, 'foto/ilustrasi', array('class' => 'pull-left img-responsive thumb margin10 img-thumbnail')) }}
+				    	@if (!empty($sermondata->srImage))
+					  		{{ HTML::image($sermondata->srImage, 'foto/ilustrasi', array('class' => 'pull-left img-responsive thumb margin10 img-thumbnail')) }}
+					  	@endif
 				      <article>
 							<h2>{{$sermondata->srTitle}}</h2>
 							<p>Oleh :  {{$sermondata->srName}}</p><br>
@@ -65,7 +67,9 @@
 						</article>
 				      </div>
 				    <div class="item">
+			    	@if (!empty($articledata->aImage1))
 					  {{ HTML::image($articledata->aImage1, 'foto/ilustrasi', array('class' => 'pull-left img-responsive thumb margin10 img-thumbnail')) }}
+					  @endif
 				      <article>
 							<h2>{{$articledata->aTitle}}</h2>
 							<p>Oleh : {{$articledata->aAuthor}}</p><br>
@@ -98,8 +102,21 @@
 
 				@foreach ($eventsdata as $eventdata)
 				<div class="img-content col-xs-12 {{'col-md-'.$colWidth}}">
-					<a data-toggle="lightbox" href="#lightbox1">{{ HTML::image($eventdata->uImage, 'foto/ilustrasi', array('class' => 'img-responsive thumb margin10 img-thumbnail')) }}</a>
+					<a data-toggle="modal" data-target="#posterModal" >{{ HTML::image($eventdata->uImage, 'foto/ilustrasi', array('class' => 'img-responsive thumb margin10 img-thumbnail')) }}</a>
 					<h4>{{$eventdata->uName}}</h4>
+				</div>
+				<div class="modal fade" id="posterModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+				  <div class="modal-dialog">
+				    <div class="modal-content">
+				      <div class="modal-header">
+				        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+				        <h4 class="modal-title" id="myModalLabel" style="color: #616161">{{$eventdata->uName}}</h4>
+				      </div>
+				      <div class="modal-body">
+				        {{ HTML::image($eventdata->uImage, 'foto/ilustrasi', array('class' => '')) }}
+				      </div>
+				    </div>
+				  </div>
 				</div>
 				@endforeach
 			</div>

@@ -13,8 +13,9 @@
 			<th>#</th>
 			<th>Judul</th>
 			<th>Divisi</th>
-			<th>User</th>
+			<th>Posted by</th>
 			<th>Update Terakhir</th>
+			<th>Updated by</th>
 			<th>Edit/Delete</th>
 		</tr>
 
@@ -25,8 +26,9 @@
 		  	<td>{{$count}}</td>
 		  	<td>{{$article->aTitle}}</td>
 		  	<td>{{$divisionName[$article->aType]}}</td>
-		  	<td></td>
+		  	<td>{{$article->aUserName}}</td>
 		  	<td>{{$article->updated_at}}</td>
+		  	<td>{{$article->aUpdated_by}}</td>
 		  	<td>
 		  		<a href="{{URL::route('article-edit',$article->aSlug)}}"><button type="button" class="btn btn-default">Edit</button></a>
 		  		<a href="{{URL::route('article-delete',$article->aSlug)}}"  onclick="if(!confirm('Are you sure to delete this item?')){return false;};"><button type="button" class="btn btn-danger">Delete</button></a>

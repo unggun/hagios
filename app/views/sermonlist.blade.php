@@ -13,8 +13,9 @@
 			<th>#</th>
 			<th>Judul</th>
 			<th>Penulis</th>
-			<th>User</th>
+			<th>Posted by</th>
 			<th>Update Terakhir</th>
+			<th>Updated by</th>
 			<th>Edit/Delete</th>
 		</tr>
 
@@ -25,8 +26,9 @@
 		  	<td>{{$count}}</td>
 		  	<td>{{$sermon->srTitle}}</td>
 		  	<td>{{$sermon->srName}}</td>
-		  	<td></td>
+		  	<td>{{$sermon->srPosted_by}}</td>
 		  	<td>{{$sermon->updated_at}}</td>
+		  	<td>{{$sermon->srUpdated_by}}</td>
 		  	<td>
 		  		<a href="{{URL::route('sermon-edit',$sermon->srSlug)}}"><button type="button" class="btn btn-default">Edit</button></a>
 		  		<a href="{{URL::route('sermon-delete',$sermon->srSlug)}}"  onclick="if(!confirm('Are you sure to delete this item?')){return false;};"><button type="button" class="btn btn-danger">Delete</button></a>

@@ -26,6 +26,7 @@ class SermonController extends BaseController {
           $sermon->srName      		= $post['author'];
           $sermon->srContent 		= $post['content'];
           $sermon->srIntro       	= (strlen($post['content']) > 500) ? substr($post['content'], 0, 500) : $post['content'];
+          $sermon->srPosted_by    = Input::get('user');
 
           if (Input::hasFile('image1'))
         	{
@@ -91,6 +92,7 @@ class SermonController extends BaseController {
             $sermon->srName         = $post['author'];
             $sermon->srContent    = $post['content'];
             $sermon->srIntro        = (strlen($post['content']) > 500) ? substr($post['content'], 0, 500) : $post['content'];
+            $sermon->srUpdated_by    = Input::get('user');
 
             if (Input::hasFile('image1'))
             {

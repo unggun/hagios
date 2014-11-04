@@ -25,6 +25,7 @@ class UpcomingController extends BaseController {
 
         $datetimeinput      	= strtotime(Input::get('datetime'));
         $upcoming->uExpire_at = date("Y-m-d H:i:s", $datetimeinput);
+        $upcoming->uPosted_by = Input::get('user');
 
         
         $file     = Input::file('image');
@@ -80,6 +81,7 @@ class UpcomingController extends BaseController {
               $upcoming->uName        = $post['name'];
               $upcoming->uDesc         = Input::get('description');
               $upcoming->uExpire_at = date("Y-m-d H:i:s", strtotime($post['datetime']));
+              $upcoming->uUpdated_by  = Input::get('user');
 
               if (Input::hasFile('image'))
               {

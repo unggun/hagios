@@ -22,6 +22,8 @@ class ScheduleController extends BaseController {
 
         $datetimeinput      	= strtotime($post['datetime']);
         $schedule->sTime = date("Y-m-d H:i:s", $datetimeinput);
+
+        $schedule->sPosted_by   = Input::get('user');
        	
        	//echo $schedule->sTime; die();
 
@@ -84,6 +86,7 @@ class ScheduleController extends BaseController {
               $schedule->sSpeaker        = $post['speaker'];
               $datetimeinput        = strtotime($post['datetime']);
               $schedule->sTime = date("Y-m-d H:i:s", $datetimeinput);
+              $schedule->sUpdated_by    = Input::get('user');
 
               if(count($schedule->getDirty()) > 0) /* avoiding resubmission of same content */
               {

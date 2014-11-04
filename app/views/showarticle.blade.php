@@ -15,11 +15,15 @@
 		<section>
 		      <div class="blogShort clear" style="border:none">
 		      	<h2>{{$articledata->aTitle}}</h2>
+		      	@if (!empty($articledata->aImage1))
 		      	{{ HTML::image($articledata->aImage1, 'foto/ilustrasi', array('class' => 'pull-left img-responsive img-large margin10 img-thumbnail')) }}
+		      	@endif
 		      	<em>Oleh: {{$articledata->aAuthor}}</em><br />
-		      	<em>Posted by at {{date('M d, Y', strtotime($articledata->created_at))}}</em>
+		      	<em>Posted by {{$articledata->aUserName}} at {{date('M d, Y', strtotime($articledata->created_at))}}</em>
 		      	<p>{{$articledata->aContent}}</p>
+		      	@if (!empty($articledata->aImage2))
 		      	{{ HTML::image($articledata->aImage2, 'foto/ilustrasi', array('class' => 'pull-right img-responsive img-large margin10 img-thumbnail')) }}
+		      	@endif
 		      </div>
 
 

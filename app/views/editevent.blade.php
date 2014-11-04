@@ -50,6 +50,8 @@
         </div>
     </div>
 
+    {{ Form::hidden('user', Auth::user()->name)}}
+
 
     {{'<br />* = wajib diisi<br /><br />'}}
 
