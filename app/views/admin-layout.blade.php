@@ -51,8 +51,8 @@
   <div class="row">
     <div class="col-md-2">
         <aside class="sidebar">
-            <p>Nama admin</p>
-            <button type="button" class="btn-sys btn-light btn-border btn-extra-small btn-crv">Log Out</button>
+            <p>{{Auth::user()->name}}</p>
+            <a href="{{URL::route('doLogout')}}"><button type="button" class="btn-sys btn-light btn-border btn-extra-small btn-crv">Log Out</button></a>
             <a href="{{URL::route('home')}}"><button type="button" class="btn-sys btn-light btn-border btn-extra-small btn-crv">Home Page</button></a>
             <hr />
             <div id="side-menu">

@@ -129,7 +129,7 @@
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src="{{ URL::asset('js/bootstrap.min.js') }}"></script>
     <script type="text/javascript" src="{{ URL::asset('js/jquery.min.js') }}"></script>
-	<script type="text/javascript" src="{{ URL::asset('js/jquery.migrate.js') }}s"></script>
+	<script type="text/javascript" src="{{ URL::asset('js/jquery.migrate.js') }}"></script>
 	<script type="text/javascript" src="{{ URL::asset('js/bootstrap.min.js') }}"></script>
 	<script type="text/javascript" src="{{ URL::asset('js/retina-1.1.0.min.js') }}"></script>
 	<script type="text/javascript" src="{{ URL::asset('js/jquery.easing-1.3.pack.js') }}"></script>
